@@ -32,6 +32,14 @@ Feather Icons 1.1.0 is rebuilt for **Mendix Studio Pro 10.24.17** and the Mendix
 3. If Studio Pro reports that the widget definition has changed, right-click the error and choose **Update all widgets**. Your settings are kept.
 4. If the running app still shows the old widget, stop it, choose **App > Clean Deployment Directory** and run it again.
 
+### Example module
+
+[`FeatherSample.mpk`](https://github.com/bharathidas/FeatherIcons/raw/main/FeatherSample.mpk) is an example module for Studio Pro 10.24.17. It contains the widget, the entity `FeatherIcon` (Name, Size, Color), the microflow `MyFirstLogic` that creates an object with the icon `BarChart`, size 30 and color red, and the page `Home_Web` that shows the icon.
+
+1. Download `FeatherSample.mpk`.
+2. In Studio Pro, right-click the app in the App Explorer and choose **Import module package**.
+3. Add the page `FeatherSample.Home_Web` to the navigation and run the app. The page uses the layout `Atlas_Core.Atlas_Default`.
+
 ### Source code and build
 
 The widget source is in the [`featherIcons`](featherIcons) folder.
