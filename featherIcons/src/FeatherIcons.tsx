@@ -1,32 +1,27 @@
 import { ReactElement, createElement } from "react";
 
 import { FeatherIconsContainerProps } from "../typings/FeatherIconsProps";
-import { FeatherIconInput } from "./components/FeatherIconInput";
+import { DEFAULT_COLOR, DEFAULT_SIZE, FeatherIconInput } from "./components/FeatherIconInput";
 import "./ui/FeatherIcons.css";
 
-export function FeatherIcons(props: FeatherIconsContainerProps): ReactElement {
-    const {  iconKey, sizeKey, colorKey } = props;
-    
-let iconvalue=iconKey?.value || "";
+export function FeatherIcons(props: FeatherIconsContainerProps): ReactElement | null {
+    const { iconKey, sizeKey, colorKey } = props;
 
-// let pascalCaseIconName = toPascalCaseWord(iconvalue);
-let sizeValue = sizeKey?.value?.toNumber?.() ?? 24;
-let colorValue = colorKey?.value || "black";
+    if (iconKey.status === "loading" && iconKey.value === undefined) {
+        return null;
+    }
 
+    // An empty Integer attribute arrives as 0, so zero and negative sizes are treated as not set.
+    const sizeValue = Number(sizeKey?.value);
+    const size = isFinite(sizeValue) && sizeValue > 0 ? sizeValue : DEFAULT_SIZE;
 
-// function toPascalCaseWord(value: string): string {
-//     if (!value) return "";
-//    return value
-//         .toLowerCase()
-//         .split("-")
-//         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-//         .join("-");
-// }
     return (
         <FeatherIconInput
-            iconName={iconvalue}
-            size={sizeValue}
-            color={colorValue}
+            iconName={iconKey.value || ""}
+            size={size}
+            color={colorKey?.value?.trim() || DEFAULT_COLOR}
+            className={props.class}
+            style={props.style}
         />
     );
 }

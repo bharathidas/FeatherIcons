@@ -1,28 +1,29 @@
 import { ReactElement, createElement } from "react";
 
-import { FeatherIconInput, FeatherIconInputProps } from "./components/FeatherIconInput";
 import { FeatherIconsPreviewProps } from "../typings/FeatherIconsProps";
 
-function parentInline(node?: HTMLElement | null): void {
-    // Temporary fix, the web modeler add a containing div, to render inline we need to change it.
-    if (node && node.parentElement && node.parentElement.parentElement) {
-        node.parentElement.parentElement.style.display = "inline-block";
-    }
-}
-
-function transformProps(props: FeatherIconsPreviewProps): FeatherIconInputProps {
-    return {
-        iconName: props.iconKey ? props.iconKey : "",
-        color: props.colorKey ? props.colorKey : "black",
-        size: props.sizeKey ? Number(props.sizeKey) : 24
-    };
-}
-
+// In Studio Pro the attribute properties only hold attribute names, so the preview shows the
+// Feather logo icon with the runtime defaults (24 px, black). The icon is drawn inline to keep
+// the full react-feather icon set out of the preview bundle.
 export function preview(props: FeatherIconsPreviewProps): ReactElement {
     return (
-        <div ref={parentInline}>
-            <FeatherIconInput {...transformProps(props)}></FeatherIconInput>
-        </div>
+        <span className={`widget-feathericons ${props.class}`} style={props.styleObject}>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width={24}
+                height={24}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="black"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            >
+                <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z" />
+                <line x1="16" y1="8" x2="2" y2="22" />
+                <line x1="17.5" y1="15" x2="9" y2="15" />
+            </svg>
+        </span>
     );
 }
 

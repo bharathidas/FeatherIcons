@@ -1,24 +1,9 @@
-.widget-feathericons-clickable {
-    cursor: pointer;
-}
-
 .widget-feathericons {
     display: inline-block;
+    /* The box is exactly as high as the icon, and the icon stays on the text baseline as in 1.0.0 */
+    line-height: 0;
 }
 
-.widget-feathericons.badge:empty {
-    display: initial;
-    /* Fix padding to stay round */
-    padding: 3px 10px;
-}
-
-.widget-feathericons.label:empty {
-    display: initial;
-    /* Fix padding to stay square */
-    padding: .2em .8em .3em;
-}
-
-.widget-feathericons.badge {
-    min-width: 18px;
-    min-height: 18px;
+.widget-feathericons.widget-feathericons-not-found {
+    line-height: inherit;
 }

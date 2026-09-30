@@ -26,8 +26,7 @@ export interface FeatherIconsPreviewProps {
     style: string;
     styleObject?: CSSProperties;
     readOnly: boolean;
-    renderMode: "design" | "xray" | "structure";
-    translate: (text: string) => string;
+    renderMode?: "design" | "xray" | "structure";
     iconKey: string;
     sizeKey: string;
     colorKey: string;
