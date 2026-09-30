@@ -2,6 +2,13 @@
 
 This widget provides a flexible and reusable way to display Feather icons dynamically in Mendix applications, allowing users to render icons based on configurable properties with lightweight performance and modern UI support.
 
+![Feather Icons](docs/cover.jpg)
+
+## Documentation
+
+- [Feather Icons 10.24.17.docx](docs/Feather%20Icons%2010.24.17.docx): install, upgrade, configuration, properties, icon names, styling, examples and the list of all 287 icons.
+- [Marketplace documentation](docs/Marketplace%20Documentation%20-%20Feather%20Icons.md): the same in short form.
+
 ## Version 1.1.0 for Mendix Studio Pro 10.24.17
 
 Feather Icons 1.1.0 is rebuilt for **Mendix Studio Pro 10.24.17** and the Mendix React client.
@@ -76,6 +83,21 @@ Mendix Studio Pro 10.24.17 (widget 1.1.0). Widget 1.0.0: Mendix Modeler 10.24.6 
 ## Issues, Suggestions & Feature Requests:
 https://github.com/bharathidas/FeatherIcons/issues	
 
+## Illustrations (version 1.1.0):
+
+These images are rendered from the react-feather icon set; they are not screenshots of a running app.
+
+| | |
+| --- | --- |
+| ![Size and color](docs/size-and-color.png) | ![Icon names](docs/icon-names.png) |
+
+![Status list](docs/status-list.png)
+
+![All 287 icons](docs/all-icons.png)
+
 ## Screenshots:
+
+Property dialog of version 1.0.0 (the property descriptions are clearer in 1.1.0):
+
 <img width="588" height="698" alt="Screenshot_1" src="https://github.com/user-attachments/assets/080122ce-b4f8-406e-9990-ece432b2b9de" />
 
